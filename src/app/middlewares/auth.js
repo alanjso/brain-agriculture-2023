@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
         next();
     } else if ((req.path == '/v1/produtorrural' && req.method == 'POST')) {
         next();
-    } else if ((req.path == '/v1/swagger/brain-agrticulture')) {
+    } else if ((req.path.startsWith('/v1/swagger/brain-agrticulture'))) {
         next();
     } else if ((req.path == '/v1/produtorrural/resetpw')) {
         next();

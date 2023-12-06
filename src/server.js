@@ -13,7 +13,7 @@ if (config.get('postgres').habilitado) {
 }
 
 // TODO add authMiddleware
-// server.use(authMiddleware);
+server.use(authMiddleware);
 server.use(express.json());
 server.use(cors());
 server.use('/v1', routes);
