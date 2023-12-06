@@ -1,0 +1,13 @@
+{
+    "port": 4001,
+    "version": "v1",
+    "postgres": {
+        "habilitado": true,
+        "host": "localhost",
+        "database": "TesteBrainAgriculture",
+        "username": "postgres",
+        "password": "admin123"
+    },
+    "saltRounds": 10,
+    "jwtSecret": "brainAgriculture"
+}
