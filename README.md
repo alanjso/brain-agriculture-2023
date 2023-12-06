@@ -1,11 +1,18 @@
 # Tutorial para inicializar projeto
   - Configure o ambiente para node v10
-  - Execute os comandos a seguir:
-    - npm install
-    - npx sequelize-cli db:create
-    - npx sequelize-cli db:migrate
-    - npm test
-    - npm start
+    - Execute os comandos a seguir:
+      - npm install
+      - npx sequelize-cli db:create
+      - npx sequelize-cli db:migrate
+      - npm test
+      - npm start
+
+# Tutorial para utilizar o sistema
+  - Importe o arquivo "Insomnia - Rotas Teste - Brain Agriculture" no programa insomnia
+  - Utilize a rota "Cria Produtor Rural" para criar algum produtor rural com o objeto de exemplo
+  - Anote document e password do produtor criado e insira os valores na rota de "Login Produtor rural"
+  - O result dessa request é um uma token que deverá ser enviada nas demais requests pelo Auth Bearer Token
+  - A rota "Dashboard Completo Produtores Rurais" com a token criada no login deve retornar valores criados automaticamente no passo "npm test"
 
 # Teste - Brain Agriculture
 
