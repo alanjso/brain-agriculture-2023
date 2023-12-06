@@ -6,6 +6,4 @@ const version = config.get('version');
 app.listen(port, () => {
     console.log(`Teste Brain Agriculture server running on port ${port}`);
     console.log(`http://localhost:${port}/${version}`);
-    console.log(`http://localhost:${port}/${version}/dashboard/produtorrural/completo`);
-    console.log(`http://localhost:${port}/${version}/swagger/brain-agrticulture`);
 });
