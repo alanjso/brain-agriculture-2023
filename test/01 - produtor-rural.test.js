@@ -3,6 +3,7 @@ let chai = require('chai');
 let request = require('supertest')(express);
 let assert = chai.assert;
 let { ProdutorRural } = require('../src/app/produtor-rural/produtor-rural-model');
+const produtorRuralController = require('../src/app/produtor-rural/produtor-rural-controller');
 const config = require('config');
 const jwt = require('jsonwebtoken');
 const jwtSecret = config.get("jwtSecret");
@@ -17,7 +18,7 @@ describe('########## Produtor Rural ##########\n', function () {
         token = jwt.sign({
             data: {
                 nome_produtor: 'Admin',
-                document: '01234567891',
+                document: '05738153057',
             }
         }, jwtSecret, { expiresIn: '5m' });
     });
@@ -46,7 +47,7 @@ describe('########## Produtor Rural ##########\n', function () {
         await request.post(`${SERVICE}`)
             .set("Authorization", `Bearer ${token}`)
             .send({
-                "document": "057.381.530-57",
+                "document": "245.968.830-09",
                 "nome_produtor": "Produtor CPF com pontos",
                 "nome_fazenda": "Fazendinha Feliz 2!",
                 "cidade": "Fortaleza",
@@ -202,7 +203,9 @@ describe('########## Produtor Rural ##########\n', function () {
     });
 
     it('Deleta um Produtor Rural que existe e recebe status code 200', async () => {
-        const id = await (await request.get(`${SERVICE}`).set("Authorization", `Bearer ${token}`)).body.list.rows[0].id
+        const validationToken = jwt.verify(token, jwtSecret);
+        const { response } = await produtorRuralController.getByDocument(validationToken.data.document);
+        const id = response.id
         await request.delete(`${SERVICE}/${id}`)
             .set("Authorization", `Bearer ${token}`)
             .expect(async function (res) {
