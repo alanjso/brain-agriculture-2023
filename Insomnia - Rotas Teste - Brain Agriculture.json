@@ -1,13 +1,13 @@
 {
     "_type": "export",
     "__export_format": 4,
-    "__export_date": "2022-06-20T18:13:19.645Z",
-    "__export_source": "insomnia.desktop.app:v2022.4.1",
+    "__export_date": "2023-12-14T20:51:53.840Z",
+    "__export_source": "insomnia.desktop.app:v2023.5.8",
     "resources": [
         {
-            "_id": "req_4324b3a27e71497482dd5d4967e66880",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1654545080107,
+            "_id": "req_c213bf839d7d42578368dcaed534d1a7",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702587047081,
             "created": 1654375871413,
             "url": "http://localhost:4001/v1/dashboard/produtorrural/completo",
             "name": "Dashboard Completo Produtores Rurais",
@@ -29,7 +29,11 @@
                 }
             ],
             "headers": [],
-            "authentication": {},
+            "authentication": {
+                "type": "bearer",
+                "prefix": "Bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0"
+            },
             "metaSortKey": -1654206255926,
             "isPrivate": false,
             "settingStoreCookies": true,
@@ -41,19 +45,19 @@
             "_type": "request"
         },
         {
-            "_id": "wrk_3d24962df35d4decb6465902038b49e2",
+            "_id": "wrk_21d4316feffc431683f8eecb4c93aabd",
             "parentId": null,
-            "modified": 1654198700322,
-            "created": 1654198700322,
+            "modified": 1701883178747,
+            "created": 1701883178747,
             "name": "Teste Brain Agriculture",
             "description": "",
             "scope": "collection",
             "_type": "workspace"
         },
         {
-            "_id": "req_b7dcb44e17a447b4b606a32a99424c2c",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1654545093906,
+            "_id": "req_90dec86a8e50462cb6d9aa1d362f18bd",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702587044061,
             "created": 1654545027986,
             "url": "http://localhost:4001/v1/dashboard/produtorrural/total-fazendas",
             "name": "Dashboard Total fazendas Produtores Rurais",
@@ -75,7 +79,11 @@
                 }
             ],
             "headers": [],
-            "authentication": {},
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0",
+                "prefix": "Bearer"
+            },
             "metaSortKey": -1654206255901,
             "isPrivate": false,
             "settingStoreCookies": true,
@@ -87,9 +95,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_8c26fe85bb284b2f8fa7f19df2a00bf0",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1654545270149,
+            "_id": "req_a967640bb8304bfa98588ed08dececfb",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702587033008,
             "created": 1654545262281,
             "url": "http://localhost:4001/v1/dashboard/produtorrural/total-hectares",
             "name": "Dashboard Total hectares fazendas Produtores Rurais",
@@ -111,7 +119,11 @@
                 }
             ],
             "headers": [],
-            "authentication": {},
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0",
+                "prefix": "Bearer"
+            },
             "metaSortKey": -1654206255888.5,
             "isPrivate": false,
             "settingStoreCookies": true,
@@ -123,9 +135,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_220628b49d5e4a9bae1ff974ce74aa7a",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1654545456748,
+            "_id": "req_bf92e3def9774e2e92ab3c4e8bb19d49",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702587024755,
             "created": 1654545447867,
             "url": "http://localhost:4001/v1/dashboard/produtorrural/pizza-uso-solo",
             "name": "Dashboard Pizza Uso Solo Produtores Rurais",
@@ -147,7 +159,11 @@
                 }
             ],
             "headers": [],
-            "authentication": {},
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0",
+                "prefix": "Bearer"
+            },
             "metaSortKey": -1654206255882.25,
             "isPrivate": false,
             "settingStoreCookies": true,
@@ -159,9 +175,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_5323a5c78d96415eb59a916912a4ef76",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1654545633089,
+            "_id": "req_556aad62927d400a8fd334b10629e146",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702587012999,
             "created": 1654545628902,
             "url": "http://localhost:4001/v1/dashboard/produtorrural/pizza-estados",
             "name": "Dashboard Pizza Estados Produtores Rurais",
@@ -183,7 +199,11 @@
                 }
             ],
             "headers": [],
-            "authentication": {},
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0",
+                "prefix": "Bearer"
+            },
             "metaSortKey": -1654206255879.125,
             "isPrivate": false,
             "settingStoreCookies": true,
@@ -195,9 +215,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_86ce21e0d19a4cebaa04d3a991cde05d",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1654545653587,
+            "_id": "req_8fc994ccdb084b879b03a72e1378d31e",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702587006247,
             "created": 1654545648222,
             "url": "http://localhost:4001/v1/dashboard/produtorrural/pizza-culturas",
             "name": "Dashboard Pizza Culturas Produtores Rurais",
@@ -219,7 +239,11 @@
                 }
             ],
             "headers": [],
-            "authentication": {},
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0",
+                "prefix": "Bearer"
+            },
             "metaSortKey": -1654206255877.5625,
             "isPrivate": false,
             "settingStoreCookies": true,
@@ -231,9 +255,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_a5b9eaedd3f34531aba077ba94071e04",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1655730992254,
+            "_id": "req_b3829a600b424ca1989f9f483be92946",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1701883834348,
             "created": 1654198731833,
             "url": "http://localhost:4001/v1/produtorrural",
             "name": "Lista Produtores Rurais por nome",
@@ -257,7 +281,7 @@
             "headers": [],
             "authentication": {
                 "type": "bearer",
-                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTY1NTczMDk3MSwiZXhwIjoxNjU1Nzc0MTcxfQ.ZQgCW_svTBORY-bMVn-mRIvt-qjkis0bk7lK6yQPM5k",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4MzcxNSwiZXhwIjoxNzAxOTI2OTE1fQ.IZpAg65KsDHCFY5iJRkJCzI35x7suwlWDGEuIFGnDh8",
                 "prefix": "Bearer"
             },
             "metaSortKey": -1654206255876,
@@ -271,9 +295,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_100fad6a75e74288b16bd0fce05cd27b",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1655748589747,
+            "_id": "req_4ac44d4af9834a688f3d87b2f266e2fa",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1701884881986,
             "created": 1654198782832,
             "url": "http://localhost:4001/v1/produtorrural",
             "name": "Cria Produtor Rural",
@@ -281,7 +305,7 @@
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"nome_produtor\": \"Produtor CPF area válida\",\n\t\"nome_fazenda\": \"Fazendinha Feliz!\",\n\t\"document\": \"057.381.530-57\",\n\t\"cidade\": \"Fortaleza\",\n\t\"estado\": \"Ceara\",\n\t\"area_total_fazenda\": 100,\n\t\"area_agricultavel\": 50,\n\t\"area_vegetacao\": 50,\n\t\"culturas_plantadas\": [\"Soja\", \"Milho\", \"Algodão\", 15, true ],\n\t\"password\": \"1q2w3e!Q@W#E\"\n}"
+                "text": "{\n\t\"nome_produtor\": \"Produtor CPF area válida\",\n\t\"nome_fazenda\": \"Fazendinha Feliz!\",\n\t\"document\": \"057.381.530-57\",\n\t\"cidade\": \"Fortaleza\",\n\t\"estado\": \"Ceara\",\n\t\"area_total_fazenda\": 100,\n\t\"area_agricultavel\": 50,\n\t\"area_vegetacao\": 50,\n\t\"culturas_plantadas\": [\"Soja\", \"Milho\", \"Algodão\"],\n\t\"password\": \"1q2w3e!Q@W#E\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -303,9 +327,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_e00b86d1dc9847d5aef5fe39a0816b7e",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1655748592048,
+            "_id": "req_108b84e6e5484412ba26a5c211568303",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702586992393,
             "created": 1654206255826,
             "url": "http://localhost:4001/v1/produtorrural/97e5e322-5efe-4601-8f1d-ba0fe33748e6",
             "name": "Edita Produtor Rural",
@@ -323,7 +347,11 @@
                     "id": "pair_238fc49e8f584421b9b60731283a8a20"
                 }
             ],
-            "authentication": {},
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0",
+                "prefix": "Bearer"
+            },
             "metaSortKey": -1654206255826,
             "isPrivate": false,
             "settingStoreCookies": true,
@@ -335,9 +363,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_48b4b01aaa664e4ebe2c0e21b82d9004",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1654268204630,
+            "_id": "req_fc6d7521fe6b4029a184b2856382f8d8",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702586979231,
             "created": 1654206358399,
             "url": "http://localhost:4001/v1/produtorrural/b27045a6-463c-43ff-b2a1-d9faa6f96392",
             "name": "Deleta Produtor Rural",
@@ -355,7 +383,11 @@
                     "id": "pair_238fc49e8f584421b9b60731283a8a20"
                 }
             ],
-            "authentication": {},
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0",
+                "prefix": "Bearer"
+            },
             "metaSortKey": -1652343636755,
             "isPrivate": false,
             "settingStoreCookies": true,
@@ -367,8 +399,8 @@
             "_type": "request"
         },
         {
-            "_id": "req_f5f680da961749889a2a83969850c3f9",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
+            "_id": "req_bb25b72f87eb4b72b3d2bbbe3d778882",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
             "modified": 1655748672392,
             "created": 1654206362220,
             "url": "http://localhost:4001/v1/produtorrural/11a616c2-40ab-4058-93da-f3d427148eda",
@@ -403,8 +435,8 @@
             "_type": "request"
         },
         {
-            "_id": "req_b5fa2a42021a41999d44e04b33e41eb5",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
+            "_id": "req_ea3e10c513714b2bb8eadbf174216bbf",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
             "modified": 1655748747387,
             "created": 1655680099804,
             "url": "http://localhost:4001/v1/login",
@@ -435,9 +467,9 @@
             "_type": "request"
         },
         {
-            "_id": "req_414981a486fd43d2b2d1866889ce6415",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1655748704664,
+            "_id": "req_ad8cd165d9fa4c23898fce48855d5f33",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
+            "modified": 1702586963345,
             "created": 1655733773475,
             "url": "http://localhost:4001/v1/produtorrural/resetpw",
             "name": "Reset Pw Produtor rural",
@@ -458,7 +490,7 @@
             "authentication": {
                 "type": "bearer",
                 "prefix": "Bearer",
-                "token": "aaa"
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5vbWVfcHJvZHV0b3IiOiJQcm9kdXRvciAoY2FuYSBkZSBhw6fDumNhcikiLCJkb2N1bWVudCI6IjM5OTczNTI2MDAwMTkzIn0sImlhdCI6MTcwMTg4NTE4MCwiZXhwIjoxNzAxOTI4MzgwfQ.m-wAQwnFUp3WFyPVBn6Ie-0fuNnT1Bz9pLZ2qpfsVU0"
             },
             "metaSortKey": -1650713845067.875,
             "isPrivate": false,
@@ -471,8 +503,8 @@
             "_type": "request"
         },
         {
-            "_id": "req_e39483af8998490d9f50b1b036841116",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
+            "_id": "req_8508e9174b0b43b7ae9a72b92eac5e5d",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
             "modified": 1655748736926,
             "created": 1655734268035,
             "url": "http://localhost:4001/v1/produtorrural/changepw",
@@ -507,8 +539,8 @@
             "_type": "request"
         },
         {
-            "_id": "env_c6cc4fb3d504063d8b945f6444cc609d177a57a2",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
+            "_id": "env_c0af7b2eb6d34b2eb24ccbcd69a31e07",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
             "modified": 1654198700345,
             "created": 1654198700345,
             "name": "Base Environment",
@@ -520,23 +552,13 @@
             "_type": "environment"
         },
         {
-            "_id": "jar_c6cc4fb3d504063d8b945f6444cc609d177a57a2",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
+            "_id": "jar_7d8bfdd0081346ffbe334d880bc01037",
+            "parentId": "wrk_21d4316feffc431683f8eecb4c93aabd",
             "modified": 1654198700350,
             "created": 1654198700350,
             "name": "Default Jar",
             "cookies": [],
             "_type": "cookie_jar"
-        },
-        {
-            "_id": "spc_51c1fe9b77e74e44bb4e51843936c691",
-            "parentId": "wrk_3d24962df35d4decb6465902038b49e2",
-            "modified": 1654198700333,
-            "created": 1654198700333,
-            "fileName": "Teste Brain Agriculture",
-            "contents": "",
-            "contentType": "yaml",
-            "_type": "api_spec"
         }
     ]
 }
