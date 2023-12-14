@@ -1,3 +1,6 @@
+const config = require('config');
+const jwt = require('jsonwebtoken');
+const jwtSecret = config.get("jwtSecret");
 const produtorRuralController = require('./produtor-rural-controller');
 
 module.exports = {
@@ -20,6 +23,16 @@ module.exports = {
     create: async (req, res) => {
         // Cria um produtor rural
         try {
+            if (!req.body.document) {
+                return res.status(404).json({ msg: 'Documento não informado' });
+            }
+
+            const { response } = await produtorRuralController.getByDocument(req.body.document);
+
+            if (response) {
+                return res.status(401).json({ msg: 'Duplicata não autorizada' });
+            }
+
             const { statusCode, msg, error } = await produtorRuralController.create(req.body);
             res.status(statusCode).json({ msg, error });
         } catch (error) {
@@ -56,8 +69,22 @@ module.exports = {
     delete: async (req, res) => {
         // Deleta um produtor rural baseado no id, se encontrar.
         try {
-            const { statusCode, msg, error } = await produtorRuralController.delete(req.params.id);
-            res.status(statusCode).json({ msg, error });
+
+            const token = req.headers.authorization.replace('Bearer ', '');
+            const validationToken = jwt.verify(token, jwtSecret);
+
+            const { response } = await produtorRuralController.getByDocument(validationToken.data.document);
+
+            if (!response) {
+                return res.status(404).json({ msg: 'Produtor não encontrado' });
+            }
+
+            if (response.id === req.params.id) {
+                const { statusCode, msg, error } = await produtorRuralController.delete(req.params.id);
+                return res.status(statusCode).json({ msg, error });
+            }
+
+            return res.status(401).json({ msg: 'Deleção não autorizada' });
         } catch (error) {
             console.log("** erro req delete **");
             console.log(error);

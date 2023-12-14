@@ -83,6 +83,24 @@ module.exports = {
         }
     },
 
+    getByDocument: async (document) => {
+        // Retorna um produtor rural especifico pelo documento
+        try {
+            if (!document) {
+                return { statusCode: 404, msg: 'Documento não informado' };
+            }
+
+            const formatedDocument = document.replace(/[^\d]+/g, '');
+            const response = await ProdutorRural.findOne({ where: { document: formatedDocument }, attributes: { exclude: ['password'] } });
+
+            return { statusCode: 200, msg: 'Sucesso', response };
+        } catch (error) {
+            console.log("** erro pr getByDocument **");
+            console.log(error);
+            return { statusCode: 500, msg: 'Falha', error };
+        }
+    },
+
     delete: async (id) => {
         // Deleta um produtor rural baseado no id, se encontrar.
         try { // Verifica ser o id é valído e existe
