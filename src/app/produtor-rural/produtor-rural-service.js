@@ -45,8 +45,30 @@ module.exports = {
     edit: async (req, res) => {
         // Edita um produtor rural baseado no id
         try {
-            const { statusCode, msg, error } = await produtorRuralController.edit(req.params.id, req.body);
-            res.status(statusCode).json({ msg, error });
+
+            const token = req.headers.authorization.replace('Bearer ', '');
+            const validationToken = jwt.verify(token, jwtSecret);
+
+            const { response: responseValidator } = await produtorRuralController.getByDocument(validationToken.data.document);
+
+            if (!responseValidator) {
+                return res.status(404).json({ msg: 'Produtor não encontrado' });
+            }
+
+            const { isValid } = await produtorRuralController.comparePassword(req.body.password, responseValidator.password);
+            if (!isValid) {
+                return { statusCode: 401, msg: 'Documento ou senha inválida', error: 'Objeto não encontrado' };
+            }
+
+            if (responseValidator.id === req.params.id) {
+                const { statusCode, msg, error } = await produtorRuralController.edit(req.params.id, {
+                    ...req.body,
+                    document: responseValidator.document
+                });
+                return res.status(statusCode).json({ msg, error });
+            }
+
+            return res.status(401).json({ msg: 'Edição não autorizada' });
         } catch (error) {
             console.log("** erro req edit **");
             console.log(error);

@@ -91,7 +91,7 @@ module.exports = {
             }
 
             const formatedDocument = document.replace(/[^\d]+/g, '');
-            const response = await ProdutorRural.findOne({ where: { document: formatedDocument }, attributes: { exclude: ['password'] } });
+            const response = await ProdutorRural.findOne({ where: { document: formatedDocument } });
 
             return { statusCode: 200, msg: 'Sucesso', response };
         } catch (error) {
@@ -137,7 +137,7 @@ module.exports = {
         }
 
         try {
-            let comparedPw = await bcrypt.compare(reqBody.password, produtorEncontrado.password);
+            const comparedPw = await bcrypt.compare(reqBody.password, produtorEncontrado.password);
             if (!comparedPw) {
                 return { statusCode: 404, msg: 'Documento ou senha inválida', error: 'Objeto não encontrado' };
             }
@@ -216,6 +216,24 @@ module.exports = {
             console.log("** erro pr resetpw **");
             console.log(error);
             return { statusCode: 500, msg: 'Falha', error };
+        }
+    },
+
+    comparePassword: async (normalPassword, hashedPassword) => {
+
+        let isValid = false;
+        try {
+            const comparedPw = await bcrypt.compare(normalPassword, hashedPassword);
+            if (!comparedPw) {
+                return { isValid, statusCode: 401, msg: 'Documento ou senha inválida', error: 'Objeto não encontrado' };
+            } else {
+                isValid = true;
+                return { isValid, statusCode: 200, msg: 'Senha válida' };
+            }
+        } catch (error) {
+            console.log("** erro comparePassword **");
+            console.log(error);
+            return { statusCode: 500, msg: 'Falha', error, isValid };
         }
     }
 }

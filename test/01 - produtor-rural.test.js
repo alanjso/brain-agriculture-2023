@@ -10,6 +10,7 @@ const jwtSecret = config.get("jwtSecret");
 
 const SERVICE = '/v1/produtorrural';
 let token;
+const password = "1q2w3e!Q@W#E";
 describe('########## Produtor Rural ##########\n', function () {
 
     this.beforeAll(async () => {
@@ -36,7 +37,7 @@ describe('########## Produtor Rural ##########\n', function () {
                 "area_agricultavel": 50.0,
                 "area_vegetacao": 50.0,
                 "culturas_plantadas": ["soja", "milho", "algodão"],
-                "password": "1q2w3e!Q@W#E"
+                "password": password
             })
             .expect(function (res) {
                 assert.equal(res.statusCode, '200');
@@ -56,7 +57,7 @@ describe('########## Produtor Rural ##########\n', function () {
                 "area_agricultavel": 50.0,
                 "area_vegetacao": 50.0,
                 "culturas_plantadas": ["soja", "milho", "algodão"],
-                "password": "1q2w3e!Q@W#E"
+                "password": password
             })
             .expect(function (res) {
                 assert.equal(res.statusCode, '200');
@@ -76,7 +77,7 @@ describe('########## Produtor Rural ##########\n', function () {
                 "area_agricultavel": 50.0,
                 "area_vegetacao": 50.0,
                 "culturas_plantadas": ["soja", "milho", "algodão"],
-                "password": "1q2w3e!Q@W#E"
+                "password": password
             })
             .expect(function (res) {
                 assert.equal(res.statusCode, '200');
@@ -96,7 +97,7 @@ describe('########## Produtor Rural ##########\n', function () {
                 "area_agricultavel": 50.0,
                 "area_vegetacao": 50.0,
                 "culturas_plantadas": ["soja", "milho", "algodão"],
-                "password": "1q2w3e!Q@W#E"
+                "password": password
             })
             .expect(function (res) {
                 assert.equal(res.statusCode, '200');
@@ -135,7 +136,7 @@ describe('########## Produtor Rural ##########\n', function () {
                 "area_agricultavel": 50.0,
                 "area_vegetacao": 50.0,
                 "culturas_plantadas": ["soja", "milho", "algodão"],
-                "password": "1q2w3e!Q@W#E"
+                "password": password
             })
             .expect(function (res) {
                 assert.equal(res.statusCode, '400');
@@ -155,7 +156,7 @@ describe('########## Produtor Rural ##########\n', function () {
                 "area_agricultavel": 50.0,
                 "area_vegetacao": 50.0,
                 "culturas_plantadas": ["soja", "milho", "algodão"],
-                "password": "1q2w3e!Q@W#E"
+                "password": password
             })
             .expect(function (res) {
                 assert.equal(res.statusCode, '400');
@@ -175,10 +176,44 @@ describe('########## Produtor Rural ##########\n', function () {
                 "area_agricultavel": 50.0,
                 "area_vegetacao": 50.0,
                 "culturas_plantadas": ["Trigo"],
-                "password": "1q2w3e!Q@W#E"
+                "password": password
             })
             .expect(function (res) {
                 assert.equal(res.statusCode, '500');
+            });
+    });
+
+    it('Edita um Produtor Rural que existe e recebe status code 200', async () => {
+        const validationToken = jwt.verify(token, jwtSecret);
+        const { response } = await produtorRuralController.getByDocument(validationToken.data.document);
+        const id = response.id
+
+        await request.put(`${SERVICE}/${id}`)
+            .set("Authorization", `Bearer ${token}`)
+            .send({
+                "document": validationToken.data.document,
+                "nome_produtor": 'Produtor CPF sem pontos EDITADO',
+                "nome_fazenda": 'Fazendinha Feliz 3! Editado',
+                "cidade": 'São Paulo',
+                "estado": 'São Paulo',
+                "area_total_fazenda": 150,
+                "area_agricultavel": 100,
+                "area_vegetacao": 50,
+                "culturas_plantadas": [
+                    "Soja",
+                    "Milho",
+                    "Algodão"
+                ],
+                "password": password
+            })
+            .expect(async function (res) {
+                assert.equal(res.statusCode, '200');
+                await request.get(`${SERVICE}`)
+                    .set("Authorization", `Bearer ${token}`)
+                    .expect(function (res) {
+                        assert.equal(res.statusCode, '200');
+                        assert.equal(res.body.list.count, '4');
+                    });
             });
     });
 
@@ -208,38 +243,6 @@ describe('########## Produtor Rural ##########\n', function () {
         const id = response.id
         await request.delete(`${SERVICE}/${id}`)
             .set("Authorization", `Bearer ${token}`)
-            .expect(async function (res) {
-                assert.equal(res.statusCode, '200');
-                await request.get(`${SERVICE}`)
-                    .set("Authorization", `Bearer ${token}`)
-                    .expect(function (res) {
-                        assert.equal(res.statusCode, '200');
-                        assert.equal(res.body.list.count, '3');
-                    });
-            });
-    });
-
-    it('Edita um Produtor Rural que existe e recebe status code 200', async () => {
-        const id = await (await request.get(`${SERVICE}`).set("Authorization", `Bearer ${token}`)).body.list.rows[0].id
-        await request.put(`${SERVICE}/${id}`)
-            .set("Authorization", `Bearer ${token}`)
-            .send({
-                "document": "39973526000193",
-                "nome_produtor": "Produtor (cana de açúcar)",
-                "nome_fazenda": "Fazendinha Feliz 3!",
-                "cidade": "São Paulo",
-                "estado": "São Paulo",
-                "area_total_fazenda": 150.0,
-                "area_agricultavel": 100.0,
-                "area_vegetacao": 50.0,
-                "culturas_plantadas": [
-                    "Soja",
-                    "Milho",
-                    "Algodão",
-                    "Cana de Açúcar",
-                ],
-                "password": "1q2w3e!Q@W#E"
-            })
             .expect(async function (res) {
                 assert.equal(res.statusCode, '200');
                 await request.get(`${SERVICE}`)
